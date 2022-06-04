@@ -1,0 +1,5 @@
+Version: 1.0
+Vendor: libxslt
+Vendor URL: http://xmlsoft.org/XSLT/
+
+
