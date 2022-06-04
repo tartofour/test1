@@ -2,4 +2,18 @@ Version: 1.0
 Vendor: libxslt
 Vendor URL: http://xmlsoft.org/XSLT/
 
+if(isset($_POST['xsl'])){
+    $xml = new  DOMDocument;
+    $xml->load("beers.xml");
+    
+    $xsl = new DOMDocument;
+    $xsl->load($_POST['xsl']);
+    
+    $proc = new XSLTProcessor;
+    $proc->registerPHPFunctions();
+    $proc->importStyleSheet($xsl);
+    
+    echo $proc->transformToXML($xml);
+}
 
+?>
